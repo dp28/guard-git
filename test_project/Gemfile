@@ -4,4 +4,5 @@ source 'https://rubygems.org'
 
 gem 'guard', '~> 2.16'
 gem 'guard-rubocop'
+gem 'guard-shell'
 gem 'rb-readline'

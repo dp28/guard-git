@@ -1,10 +1,15 @@
 # frozen_string_literal: true
 
 $LOAD_PATH << '../lib'
+require 'fileutils'
 require 'guard/git'
 
 Guard::Git.enable!
 
 guard :rubocop, cli: ['--auto-correct'] do
   watch(/.+\.rb$/)
+end
+
+guard :shell do
+  watch(/is_guard_running/) { FileUtils.touch 'guard_is_running' }
 end

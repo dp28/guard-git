@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+rm -rf running_test_project
+cp -r test_project running_test_project
+
+cd running_test_project
+git init
+git add .
+git commit -m "Initial commit"
+git checkout -b test_branch
+git status
+
+bundle exec guard
+
