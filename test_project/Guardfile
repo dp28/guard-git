@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+$LOAD_PATH << '../lib'
+require 'guard/git'
+
+Guard::Git.enable!
+
 guard :rubocop, cli: ['--auto-correct'] do
   watch(/.+\.rb$/)
 end
