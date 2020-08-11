@@ -4,6 +4,8 @@ $LOAD_PATH << '../lib'
 require 'fileutils'
 require 'guard/git'
 
+ignore(%r{^output/.*})
+
 Guard::Git.enable!
 
 guard :rubocop, cli: ['--auto-correct'] do
@@ -11,5 +13,6 @@ guard :rubocop, cli: ['--auto-correct'] do
 end
 
 guard :shell do
-  watch(/is_guard_running/) { FileUtils.touch 'guard_is_running' }
+  watch('input/is_guard_running') { FileUtils.touch 'output/guard_is_running' }
+  watch(/.*/) { FileUtils.touch 'output/guard_ran' }
 end

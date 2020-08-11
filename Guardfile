@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+ignore(%r{.*test_project/.*})
+
 group :red_green_refactor, halt_on_fail: true do
   guard :rspec, cmd: 'bundle exec rspec' do
     require 'guard/rspec/dsl'
