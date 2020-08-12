@@ -5,17 +5,20 @@ you change branches.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+**NOTE:** This has not yet been released, so cannot be installed without
+cloning this repo.
+
+~Add this line to your application's Gemfile:~
 
 ```ruby
 gem 'guard-git'
 ```
 
-And then execute:
+~And then execute:~
 
     $ bundle
 
-Or install it yourself as:
+~Or install it yourself as:~
 
     $ gem install guard-git
 
