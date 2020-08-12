@@ -15,6 +15,7 @@ group :red_green_refactor, halt_on_fail: true do
 
     # lib files
     watch(%r{^lib/(.*)\.rb$}) { |m| "#{rspec.spec_dir}/#{m}_spec.rb" }
+    watch(%r{^lib/.*\.rb$}) { 'spec/guard/git_integration_spec.rb' }
   end
 
   guard :rubocop, cli: ['--auto-correct'] do
